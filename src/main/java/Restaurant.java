@@ -62,4 +62,8 @@ public class Restaurant {
         return name;
     }
 
+    //added method for failed case compilation
+    public double calculateOrderTotal(String... itemNames){
+        return -1;
+        }
 }

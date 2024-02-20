@@ -61,4 +61,21 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calculate_order_total_should_return_0_for_empty_item_names() {
+        double total = restaurant.calculateOrderTotal();
+        assertEquals(0, total); // This test should fail initially
+    }
+
+    @Test
+    public void calculate_order_total_should_return_price_of_single_item() {
+        double total = restaurant.calculateOrderTotal("Sweet corn soup");
+        assertEquals(119, total); // This test should fail initially
+    }
+
+    @Test
+    public void calculate_order_total_should_return_sum_of_prices_for_multiple_items() {
+        double total = restaurant.calculateOrderTotal("Sweet corn soup", "Vegetable lasagne");
+        assertEquals(388, total); // This test should fail initially
+    }
 }
