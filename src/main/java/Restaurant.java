@@ -62,8 +62,16 @@ public class Restaurant {
         return name;
     }
 
-    //added method for failed case compilation
+    //added method for failed case compilation- test cases passed with correct method
     public double calculateOrderTotal(String... itemNames){
-        return -1;
+        double total = 0;
+        for (String itemName : itemNames) {
+            Item item = findItemByName(itemName);
+            if (item != null) {
+                total += item.getPrice();
+                //total += item.price();
+            }
+        }
+        return total;
         }
 }
